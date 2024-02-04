@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ten Answer Game</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+</head>
+
+<body onload="displayAnswer()">
+    <div class="containergame">
+        <div class="normal-mode">Mode : Normal (1-50)</div>
+        <div class="round ">
+            <div style="text-align: center; ">
+                <p style="padding-top: 25px;" class="Life">Life
+                    <span class="display-round" id="rounds"></span>
+                    / 5 Time
+                </p>
+                <p class="pen">Hint</p>
+                <p class="hint" id="hint"></p>
+            </div>
+            <span class="display-round" id="rounds"> </span> </p>
+            <p id="hint"> </p>
+        </div>
+        <input id="input-normal" type="number" min="1" max="10" class="input-number" oninput="limitInputLength(this, 2)"
+            required>
+        <div class="display-number">
+            <div class="display-row-3">
+                <div class="three" id="number1"></div>
+                <div class="three" id="number2"></div>
+                <div class="three" id="number3"></div>
+                <div class="three" id="number4"></div>
+            </div>
+            <div class="display-row-4">
+                <div class="three" id="number5"></div>
+            </div>
+            <div class="popup-answer" id="popup">
+                <div class="answer" id="answerCorrect">
+                </div>
+                <div onclick="close_popup();" class="btn-ok" o>
+                    Close
+                </div>
+            </div>
+            <button onclick="checknormal();" type="button" class="btn-check">Submit</button>
+            <div class="popup-youwin" id="popup_youwin">
+                <img src="/img/Winner.png" width="180px" height="180px">
+                <div class="win">
+                    Youwin
+                </div>
+                <div class="answer" id="answerWinner">
+                </div>
+                <div onclick="close_popup();" class="newgame" o>
+                    <a href="./normal.html">Play Again</a>
+                </div>
+            </div>
+            <div class="popup-lose" id="popup_youlost">
+                <img src="/img/Loser.png" width="180px" height="180px">
+                <div class="lose">
+                    Loser
+                </div>
+                <div class="answer" id="answerLoser">
+                </div>
+                <div onclick="close_popup();" class="newgamelost" o>
+                    <a href="./normal.html">Play Again</a>
+                </div>
+            </div>
+        </div>
+        <div onclick="gotohome();" class="btn-home">
+            <a style="color: black;" href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                    fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z" />
+                </svg></a>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="logic.js">
+
+</script>
